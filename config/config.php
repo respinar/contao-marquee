@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2015 Leo Feyer
+ *
+ * @package   Marquee
+ * @author    Hamid Abbaszadeh info@respinar.com
+ * @license   GNU/LGPL
+ * @copyright respinar 2015
+ */
+ 
+ /**
+ * Back end modules
+ */
+array_insert($GLOBALS['BE_MOD']['content'], 1, array
+(
+	'marquee' => array
+	(
+		'tables' => array('tl_marquee', 'tl_marquee_text'),
+		'icon'   => 'system/modules/marquee/assets/icon.png'
+	)
+));
+
+
+/**
+ * Front end modules
+ */
+$GLOBALS['FE_MOD']['miscellaneous']['marquee']   = 'ModuleMarquee';
