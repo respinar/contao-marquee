@@ -3,13 +3,12 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2014 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package Ticker
- * @copyright  Softleister 2008-2015 
- * @author     Softleister <info@softleister.de> 
- * @package    Ticker 
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @package   Marquee
+ * @author    Hamid Abbaszadeh info@respinar.com
+ * @license   LGPL-3.0+
+ * @copyright respinar 2015
  */
 
 /**

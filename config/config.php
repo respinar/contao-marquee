@@ -7,7 +7,7 @@
  *
  * @package   Marquee
  * @author    Hamid Abbaszadeh info@respinar.com
- * @license   GNU/LGPL
+ * @license   LGPL-3.0+
  * @copyright respinar 2015
  */
  
