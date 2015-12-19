@@ -110,7 +110,7 @@ $GLOBALS['TL_DCA']['tl_marquee'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('protected'),
-		'default'                     => '{title_legend},title;{parameter_legend},parameter,speed,wait;{protected_legend:hide},protected;'
+		'default'                     => '{title_legend},title;{protected_legend:hide},protected;'
 	),
 
 	// Subpalettes
@@ -138,31 +138,6 @@ $GLOBALS['TL_DCA']['tl_marquee'] = array
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>255),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
-        'parameter' => array
-        (
-            'label'                   => &$GLOBALS['TL_LANG']['tl_marquee']['parameter'],
-            'exclude'                 => true,
-            'filter'                  => true,
-            'inputType'               => 'checkbox',
-            'eval'                    => array('submitOnChange'=>true),
-            'sql'                     => "char(1) NOT NULL default ''"
-        ),
-        'speed' => array
-        (
-            'label'                   => &$GLOBALS['TL_LANG']['tl_marquee']['speed'],
-            'default'                 => 60,
-            'inputType'               => 'text',
-            'eval'                    => array('mandatory'=>true, 'maxlength'=>10, 'tl_class'=>'w50'),
-            'sql'                     => "int(10) unsigned NOT NULL default '60'"
-        ),
-        'wait' => array
-        (
-            'label'                   => &$GLOBALS['TL_LANG']['tl_marquee']['wait'],
-            'default'                 => 3000,
-            'inputType'               => 'text',
-            'eval'                    => array('mandatory'=>true, 'maxlength'=>10, 'tl_class'=>'w50'),
-            'sql'                     => "int(10) unsigned NOT NULL default '3000'"
-        ),
         'protected' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_marquee']['protected'],
