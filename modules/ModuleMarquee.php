@@ -61,7 +61,7 @@ class ModuleMarquee extends \Module
 		}
         
         $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/marquee/assets/marquee.min.js|static';
-        $GLOBALS['TL_CSS'][]        = 'system/modules/marquee/assets/marquee.css|static';
+        $GLOBALS['TL_CSS'][]        = 'system/modules/marquee/assets/marquee.min.css|static';
 
 		return parent::generate();
 	}
@@ -93,24 +93,26 @@ class ModuleMarquee extends \Module
         
         $arrMarqueeTexts = array();
         
+        $intLen = 0;
+        
         // No items found
 		if ($objMarqueeTexts !== null)
 		{
 			while ($objMarqueeTexts->next())
             {
                 $arrMarqueeTexts [] = $objMarqueeTexts->text;
+                $intLen = $intLen + strlen($objMarqueeTexts->text);
             }
 		}
         
-        $this->Template->duration = $this->marquee_duration * $count;
+        $this->Template->duration = $this->marquee_speed * $intLen;
         $this->Template->padding  = $this->marquee_padding;
         
         if ($this->marquee_hover) {
             $this->Template->hover = "true";                
         } else {
             $this->Template->hover = "false";
-        }
-        
+        }        
         
         $this->Template->sibling  = $this->marquee_sibling;        
         

@@ -12,7 +12,7 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['marquee']    = '{title_legend},name,headline,type;{marqee_legend},marquee;{config_legend},numberOfItems,marquee_duration,marquee_padding,marquee_hover,marquee_sibling;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['marquee']    = '{title_legend},name,headline,type;{marqee_legend},marquee,numberOfItems;{config_legend},marquee_speed,marquee_padding,marquee_hover,marquee_sibling;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**
@@ -28,13 +28,13 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee'] = array
 	'sql'                     => "int(10) unsigned NOT NULL"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_duration'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_speed'] = array
 (
-	'label'                => &$GLOBALS['TL_LANG']['tl_module']['marquee_duration'],
+	'label'                => &$GLOBALS['TL_LANG']['tl_module']['marquee_speed'],
 	'exclude'              => true,
 	'inputType'            => 'text',
 	'eval'                 => array('tl_class'=>'w50'),
-    'sql'                  => "int(10) NOT NULL default '5000'"
+    'sql'                  => "int(10) NOT NULL default '200'"
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_padding'] = array
@@ -51,7 +51,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_hover'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_hover'],
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
-	'eval'                    => array(),
+	'eval'                    => array('tl_class'=>'w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
@@ -60,7 +60,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_sibling'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_sinbling'],
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
-	'eval'                    => array(),
+	'eval'                    => array('tl_class'=>'w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
