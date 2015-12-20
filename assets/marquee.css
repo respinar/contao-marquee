@@ -6,7 +6,6 @@
 }
 
 .mod_marquee {
-	display: block;
 	width: 100%;
 	overflow: hidden;
 	margin: 0 auto;
@@ -14,11 +13,8 @@
 
 .marquee-container {
 	width: 100%;
-	background: grey;
-	float: right;
 	display: inline-block;
 	overflow: hidden;
-	box-sizing: border-box;
 	height: 45px;
 	position: relative;
 	cursor: pointer;
@@ -26,14 +22,8 @@
 
 .marquee-sibling {
 	padding: 0;
-	background: rgb(61, 61, 61);
 	width: 20%;
 	height: 45px;
-	line-height: 42px;
-	font-size: 12px;
-	font-weight: normal;
-	color: #ffffff;
-	text-align: center;
 	float: right;
 	right: 0;
 	z-index: 2000;
@@ -49,7 +39,7 @@
   margin-left: 25%;
 }
 
-.marquee-items{
+.marquee-items {
   display: inline-block;
   padding: 5px;
   margin: 0;
@@ -57,13 +47,12 @@
   position: relative;
 }
 
-.marquee-items li{
+.marquee-items li {
   display: inline-block;
   line-height: 35px;
-  color: #fff;
 }
 
-.marquee-items li:after{
+.marquee-items li:after {
 	content: "|";
-	margin: 0 1em;
+	margin: 0 2em;
 }
