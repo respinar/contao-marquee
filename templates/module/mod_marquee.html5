@@ -1,38 +1,32 @@
 
-<div class="<?php echo $this->class ?> block"<?php echo $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
+<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
   
   <div class="marquee-container">
       <?php if ($this->sibling): ?>
-      <div class="marquee-sibling"><?php echo $this->headline ?></div>
+      <div class="marquee-sibling"><<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>></div>
       <?php endif; ?>
         <?php if (empty($this->texts)): ?>
-            <p class="empty"><?php echo $this->empty; ?></p>
+            <p class="empty"><?= $this->empty; ?></p>
         <?php else: ?>
     <div class="marquee">        
             <ul class="marquee-items">
-                <li><?php echo implode('</li><li>', $this->texts); ?></li>
+                <li><?= implode('</li><li>', $this->texts) ?></li>
             </ul>
     </div>
   <?php endif; ?>
-  </div>
+  </div>  
   
-  <script>
-    $(function (){
-        //createMarquee({
-        //});
-
-        //example of overwriting defaults:
-        
-         createMarquee({
-         		duration:<?= $this->duration ?>, 
-         		padding:<?= $this->padding ?>, 
-         		marquee_class:'.marquee', 
-         		container_class: '.marquee-container', 
-         		sibling_class: '.marquee-sibling', 
-         		hover: <?= $this->hover ?>
-         });
-         //});
-    });
+    <script>
+        $(function (){
+            createMarquee({
+                duration:<?= $this->duration ?>,
+                padding:<?= $this->padding ?>,
+                marquee_class:'.marquee',
+                container_class: '.marquee-container',
+                sibling_class: '.marquee-sibling',
+                hover: <?= $this->hover ?>
+            });
+        });
     </script>
   
 </div>
