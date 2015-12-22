@@ -146,8 +146,8 @@ $GLOBALS['TL_DCA']['tl_marquee_text'] = array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_marquee_text']['text'],
 			'exclude'                 => true,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'long'),
+			'inputType'               => 'textarea',
+			'eval'                    => array('mandatory'=>true, 'tl_class'=>'long'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
 		),
         'url' => array
