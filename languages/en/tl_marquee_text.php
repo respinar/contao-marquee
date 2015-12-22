@@ -36,6 +36,6 @@ $GLOBALS['TL_LANG']['tl_marquee_text']['pastenew']   = array('Create a new marqu
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_marquee_text']['marquee_legend'] = 'Text of marquee';
+$GLOBALS['TL_LANG']['tl_marquee_text']['title_legend']   =  'Text of marquee';
 $GLOBALS['TL_LANG']['tl_marquee_text']['link_legend']    = 'Redirect at Click';
 $GLOBALS['TL_LANG']['tl_marquee_text']['publish_legend'] = 'Publish settings';

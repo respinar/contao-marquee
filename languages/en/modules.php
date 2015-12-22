@@ -15,10 +15,10 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD'][''] = array('', '');
+$GLOBALS['TL_LANG']['MOD']['marquee'] = array('Marquee', 'Manage text items of Marquees');
 
 
 /**
  * Front end modules
  */
-$GLOBALS['TL_LANG']['FMD'][''] = array('', '');
+$GLOBALS['TL_LANG']['FMD']['marquee'] = array('Marquee', 'Add marquee to the page');
