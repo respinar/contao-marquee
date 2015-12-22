@@ -25,6 +25,12 @@
         "contao": {
             "sources": {
                 "": "system/modules/marquee"
+            },
+            "transifex": {
+                "project": "contao-marquee",
+                "prefix": "master-",
+                "languages_cto": "languages",
+                "languages_tx": ".tx"
             }
         }
     }
