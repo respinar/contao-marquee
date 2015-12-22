@@ -12,7 +12,9 @@
             <?php if (empty($this->texts)): ?>
                 <span class="empty"><?= $this->empty; ?></span>
             <?php else: ?>
-                <span><?= implode('</span><span>', $this->texts) ?></span>
+                <?php foreach ($this->texts as $text): ?>
+                  <span><?= $text ?></span>
+                <?php endforeach ?>                
             <?php endif; ?>
         </div>
     </div>   
