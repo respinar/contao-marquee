@@ -2,30 +2,31 @@
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
   
   <div class="marquee-container">
-      <?php if ($this->sibling): ?>
+  
+    <?php if ($this->headline): ?>
       <div class="marquee-sibling"><<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>></div>
-      <?php endif; ?>
-        <?php if (empty($this->texts)): ?>
-            <p class="empty"><?= $this->empty; ?></p>
-        <?php else: ?>
+    <?php endif; ?>
+   
     <div class="marquee">        
-            <ul class="marquee-items">
-                <li><?= implode('</li><li>', $this->texts) ?></li>
-            </ul>
-    </div>
-  <?php endif; ?>
-  </div>  
+        <div class="marquee-items">
+            <?php if (empty($this->texts)): ?>
+                <span class="empty"><?= $this->empty; ?></span>
+            <?php else: ?>
+                <span><?= implode('</span><span>', $this->texts) ?></span>
+            <?php endif; ?>
+        </div>
+    </div>   
+    
+  </div>
   
     <script>
-        $(function (){
-            createMarquee({
-                duration:<?= $this->duration ?>,
-                padding:<?= $this->padding ?>,
-                marquee_class:'.marquee',
-                container_class: '.marquee-container',
-                sibling_class: '.marquee-sibling',
-                hover: <?= $this->hover ?>
-            });
+        $('.marquee').marquee({
+            duration: <?= $this->duration ?>,
+            gap: <?= $this->gap ?>,
+            delayBeforeStart: <?= $this->delayBeforeStart ?>,
+            direction: '<?= $this->direction ?>',
+            duplicated: <?= $this->duplicated ?>,
+            pauseOnHover: <?= $this->pauseOnHover ?>
         });
     </script>
   
