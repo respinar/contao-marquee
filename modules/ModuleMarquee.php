@@ -60,8 +60,8 @@ class ModuleMarquee extends \Module
 			return '';
 		}
         
-        $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/marquee/assets/marquee.min.js|static';
-        $GLOBALS['TL_CSS'][]        = 'system/modules/marquee/assets/marquee.min.css|static';
+       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/marquee/assets/jquery.marquee.min.js|static';
+       $GLOBALS['TL_CSS'][]        = 'system/modules/marquee/assets/marquee.min.css|static';
 
 		return parent::generate();
 	}
@@ -105,16 +105,23 @@ class ModuleMarquee extends \Module
             }
 		}
         
-        $this->Template->duration = $this->marquee_speed * $intLen;
-        $this->Template->padding  = $this->marquee_padding;
+        $this->Template->duration         = $this->marquee_speed * $intLen;
+        $this->Template->gap              = $this->marquee_gap;
+        $this->Template->delayBeforeStart = $this->marquee_delayBeforeStart;        
+        $this->Template->direction        = $this->marquee_direction;
+        $this->Template->duplicate        = $this->marquee_duplicate;
         
-        if ($this->marquee_hover) {
-            $this->Template->hover = "true";                
+        if ($this->marquee_pauseOnHover) {
+            $this->Template->pauseOnHover = "true";                
         } else {
-            $this->Template->hover = "false";
-        }        
+            $this->Template->pauseOnHover = "false";
+        }   
         
-        $this->Template->sibling  = $this->marquee_sibling;        
+        if ($this->marquee_duplicated) {
+            $this->Template->duplicated = "true";                
+        } else {
+            $this->Template->duplicated = "false";
+        }
         
         $this->Template->texts = $arrMarqueeTexts;
 	}
