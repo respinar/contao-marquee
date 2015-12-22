@@ -73,6 +73,15 @@ class ModuleMarquee extends \Module
 	protected function compile()
 	{
         
+        $this->Template->duration         = 10000;
+        $this->Template->gap              = $this->marquee_gap;
+        $this->Template->delayBeforeStart = $this->marquee_delayBeforeStart;        
+        $this->Template->direction        = $this->marquee_direction;
+        $this->Template->duplicate        = $this->marquee_duplicate;        
+        
+        $this->Template->pauseOnHover     = $this->marquee_pauseOnHover ? "true" : "false";        
+        $this->Template->duplicated       = $this->marquee_duplicated ? "true" : "false";
+        
         $this->Template->empty = $GLOBALS['TL_LANG']['MSC']['emptyMarquee'];
         
        
@@ -106,22 +115,6 @@ class ModuleMarquee extends \Module
 		}
         
         $this->Template->duration         = $this->marquee_speed * $intLen;
-        $this->Template->gap              = $this->marquee_gap;
-        $this->Template->delayBeforeStart = $this->marquee_delayBeforeStart;        
-        $this->Template->direction        = $this->marquee_direction;
-        $this->Template->duplicate        = $this->marquee_duplicate;
-        
-        if ($this->marquee_pauseOnHover) {
-            $this->Template->pauseOnHover = "true";                
-        } else {
-            $this->Template->pauseOnHover = "false";
-        }   
-        
-        if ($this->marquee_duplicated) {
-            $this->Template->duplicated = "true";                
-        } else {
-            $this->Template->duplicated = "false";
-        }
         
         $this->Template->texts = $arrMarqueeTexts;
 	}
