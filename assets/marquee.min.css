@@ -1,2 +1,2 @@
-/* jQuery Marquee, (c) 2015 repinar, LGPL-3+ license */
-.mod_marquee *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box}.mod_marquee{width:100%;overflow:hidden;margin:0 auto}.marquee-container{width:100%;display:inline-block;overflow:hidden;height:45px;position:relative;cursor:pointer}.marquee-sibling{padding:0;width:20%;height:45px;float:right;right:0;z-index:2000}.marquee,[class^=marquee]{display:inline-block;white-space:nowrap;position:absolute}.marquee{margin-left:25%}.marquee-items{display:inline-block;padding:5px;margin:0;height:45px;position:relative}.marquee-items li{display:inline-block;line-height:35px}.marquee-items li:after{content:"|";margin:0 2em}
+/* Marquee, (c) 2015 Hamid Abbaszadeh, LGPL-3+ license */
+.mod_marquee{direction:ltr;}.marquee-container{width:100%;cursor:pointer;}.marquee{overflow:hidden;}
