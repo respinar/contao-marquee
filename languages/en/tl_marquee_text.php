@@ -14,7 +14,7 @@
 /**
  * Fields
  */
-$GLOBALS['TL_LANG']['tl_marquee_text']['text']       = array('Text of marquee', 'Please enter a text for the marquee.<br />With {{marquee::next_event::ID}} you can insert the teaser of the next event from Calendar ID.');
+$GLOBALS['TL_LANG']['tl_marquee_text']['text']       = array('Text of marquee', 'Please enter a text for the marquee.');
 $GLOBALS['TL_LANG']['tl_marquee_text']['published']  = array('Published', 'The marquee text will not be visible on your website until it is published.');
 $GLOBALS['TL_LANG']['tl_marquee_text']['start']      = array('Show from', 'Do not show the marquee text on the website before this day and time.');
 $GLOBALS['TL_LANG']['tl_marquee_text']['stop']       = array('Show until', 'Do not show the marquee text on the website on and after this day and time.');
