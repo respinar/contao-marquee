@@ -34,7 +34,7 @@ $GLOBALS['TL_LANG']['tl_marquee']['edit']   		= array('Edit marquee', 'Edit marq
 $GLOBALS['TL_LANG']['tl_marquee']['editheader']     = array('Edit marquee settings', 'Edit marquee settings ID %s');
 $GLOBALS['TL_LANG']['tl_marquee']['copy']   		= array('Copy marquee', 'Copy marquee ID %s');
 $GLOBALS['TL_LANG']['tl_marquee']['delete'] 		= array('Delete marquee', 'Delete marquee ID %s');
-$GLOBALS['TL_LANG']['tl_marquee']['show']   		= array('Marquee details', 'Show details of tickers ID %s');
+$GLOBALS['TL_LANG']['tl_marquee']['show']   		= array('Marquee details', 'Show details of marquees ID %s');
  
 /**
  * Legends
