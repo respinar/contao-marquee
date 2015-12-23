@@ -16,7 +16,7 @@
  */
 $GLOBALS['TL_LANG']['tl_marquee']['title']     = array('Title', 'Please enter the title of the marquee.');
 $GLOBALS['TL_LANG']['tl_marquee']['protected'] = array('Protect marquee','Show marquee items to certain member groups only.');
-$GLOBALS['TL_LANG']['tl_marquee']['groups']    = array('Allowed member groups','These groups will be able to see the menu items in this marquee.');
+$GLOBALS['TL_LANG']['tl_marquee']['groups']    = array('Allowed member groups','These groups will be able to see the items in this marquee.');
 
 
 
