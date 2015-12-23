@@ -12,7 +12,13 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['marquee']    = '{title_legend},name,headline,type;{marqee_legend},marquee,numberOfItems;{config_legend},marquee_speed,marquee_direction,marquee_delayBeforeStart,marquee_gap,marquee_pauseOnHover,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['marquee']    = '{title_legend},name,headline,type;{marqee_legend},marquee,numberOfItems;{config_legend},marquee_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+
+$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'marquee_duplicated';
+
+$GLOBALS['TL_DCA']['tl_module']['subpalettes']['marquee_duplicated'] = 'marquee_gap';
+
+
 
 
 /**
@@ -71,7 +77,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_duplicated'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_duplicated'],
 	'exclude'                 => true,
 	'inputType'               => 'checkbox',
-	'eval'                    => array('tl_class'=>'w50 m12'),
+	'eval'                    => array('submitOnChange'=>true,'tl_class'=>'w50 m12'),
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
