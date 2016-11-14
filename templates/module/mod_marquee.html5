@@ -13,7 +13,7 @@
                 <span class="marquee-item empty"><?= $this->empty; ?></span>
             <?php else: ?>
                 <?php foreach ($this->texts as $text): ?>
-                  <span class="marquee-item>
+                  <span class="marquee-item">
                     <?php if (!empty($text['url'])): ?>
                         <a href="<?=$text['url'] ?>"
                             <?php if (!empty($text['target'])): ?>
