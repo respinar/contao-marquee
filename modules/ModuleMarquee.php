@@ -109,8 +109,14 @@ class ModuleMarquee extends \Module
 		{
 			while ($objMarqueeTexts->next())
             {
-                $arrMarqueeTexts [] = $objMarqueeTexts->text;
-                $intLen = $intLen + strlen($objMarqueeTexts->text);
+                $tmpArr= array();
+                if(isset($objMarqueeTexts->text) && !empty($objMarqueeTexts->text)) {
+                    $tmpArr ['text']   = $objMarqueeTexts->text;
+                    $tmpArr ['url']    = $objMarqueeTexts->url;
+                    $tmpArr ['target'] = $objMarqueeTexts->target;
+                    $intLen            += strlen($objMarqueeTexts->text);
+                    $arrMarqueeTexts[] = $tmpArr;
+                }
             }
 		}
         

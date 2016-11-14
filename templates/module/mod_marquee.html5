@@ -10,10 +10,23 @@
     <div class="marquee">        
         <div class="marquee-items">
             <?php if (empty($this->texts)): ?>
-                <span class="empty"><?= $this->empty; ?></span>
+                <span class="marquee-item empty"><?= $this->empty; ?></span>
             <?php else: ?>
                 <?php foreach ($this->texts as $text): ?>
-                  <span><?= $text ?></span>
+                  <span class="marquee-item>
+                    <?php if (!empty($text['url'])): ?>
+                        <a href="<?=$text['url'] ?>"
+                            <?php if (!empty($text['target'])): ?>
+                                target="_blank"
+                            <?php endif; ?>
+                        >
+                    <?php endif; ?>
+                    <?= $text['text'] ?>
+                    <?php if (!empty($text['url'])): ?>
+                        </a>
+                    <?php endif; ?>
+
+                  </span>
                 <?php endforeach ?>                
             <?php endif; ?>
         </div>
