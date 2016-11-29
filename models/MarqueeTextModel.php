@@ -74,7 +74,7 @@ class MarqueeTextModel extends \Model
 	 *
 	 * @return \Model\Collection|null A collection of models or null if there are no news
 	 */
-	public static function findPublishedByPid($intId, $intLimit=0, array $arrOptions=array())
+	public static function findPublishedByPid($intId,array $arrOptions=array())
 	{
 		$time = time();
 		$t = static::$strTable;
@@ -84,11 +84,6 @@ class MarqueeTextModel extends \Model
 		if (!isset($arrOptions['order']))
 		{
 			$arrOptions['order'] = "$t.sorting";
-		}
-
-		if ($intLimit > 0)
-		{
-			$arrOptions['limit'] = $intLimit;
 		}
 
 		return static::findBy($arrColumns, $intId, $arrOptions);

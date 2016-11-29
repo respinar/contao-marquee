@@ -60,7 +60,7 @@ class ModuleMarquee extends \Module
 			return '';
 		}
         
-       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/marquee/assets/jquery.marquee.min.js|static';
+       $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/marquee/assets/jquery.marquee.js|static';
        $GLOBALS['TL_CSS'][]        = 'system/modules/marquee/assets/marquee.min.css|static';
 
 		return parent::generate();
@@ -73,39 +73,30 @@ class ModuleMarquee extends \Module
 	protected function compile()
 	{
         
-        $this->Template->duration         = 10000;
+        $this->Template->duration         = $this->marquee_duration;
+//        $this->Template->durationIsSpeed  = $this->marquee_duration_is_speed ? "true" : "false";
+        $this->Template->durationIsSpeed  = true;
+
         $this->Template->gap              = $this->marquee_gap;
         $this->Template->delayBeforeStart = $this->marquee_delayBeforeStart;        
         $this->Template->direction        = $this->marquee_direction;
         $this->Template->duplicate        = $this->marquee_duplicate;        
-        
-        $this->Template->pauseOnHover     = $this->marquee_pauseOnHover ? "true" : "false";        
+        $this->Template->pauseOnHover     = $this->marquee_pauseOnHover ? "true" : "false";
         $this->Template->duplicated       = $this->marquee_duplicated ? "true" : "false";
         
         $this->Template->empty = $GLOBALS['TL_LANG']['MSC']['emptyMarquee'];
         
        
-        $intTotal = \MarqueeTextModel::countPublishedByPid($this->marquee);
+        $optns=array();
+        if(isset($this->numberOfItem) && $this->numberOfItem>0)
+            $optns["limit"]=$this->numberOfItem;
         
-		if ($intTotal < 1)
-		{
-			return;
-		}
-        
-        if (!($this->numberOfItem) or $this->numberOfItem > $intTotal) {
-            $count = $intTotal;
-        } else {
-            $count = $this->numberOfItem;             
-        }
-        
-        $objMarqueeTexts = \MarqueeTextModel::findPublishedByPid($this->marquee,$count);
+        $objMarqueeTexts = \MarqueeTextModel::findPublishedByPid($this->marquee,$optns);
         
         $arrMarqueeTexts = array();
-        
-        $intLen = 0;
-        
+
         // No items found
-		if ($objMarqueeTexts !== null)
+		if ($objMarqueeTexts !== null && !empty($objMarqueeTexts))
 		{
 			while ($objMarqueeTexts->next())
             {
@@ -114,14 +105,10 @@ class ModuleMarquee extends \Module
                     $tmpArr ['text']   = $objMarqueeTexts->text;
                     $tmpArr ['url']    = $objMarqueeTexts->url;
                     $tmpArr ['target'] = $objMarqueeTexts->target;
-                    $intLen            += strlen($objMarqueeTexts->text);
                     $arrMarqueeTexts[] = $tmpArr;
                 }
             }
-		}
-        
-        $this->Template->duration         = $this->marquee_speed * $intLen;
-        
-        $this->Template->texts = $arrMarqueeTexts;
+            $this->Template->texts = $arrMarqueeTexts;
+        }
 	}
 }

@@ -15,12 +15,13 @@
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_module']['marquee']                  = array('Laufschrift', 'Bitte wählen sie eine Laufschrift.');
-$GLOBALS['TL_LANG']['tl_module']['marquee_speed']            = array('Geschwindigkeit','Geschwindigkeit der Laufschrift  in Millisekunden per Buchstabe.');
+$GLOBALS['TL_LANG']['tl_module']['marquee_duration']            = array('Dauer/Geschwindigkeit','Geschwindigkeit der Laufschrift  in Millisekunden per Buchstabe.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_direction']        = array('Richtung','Richtung der Laufschrift.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_delayBeforeStart'] = array('Verzögerung vor dem Start','Zeit(in Millisekunden) bevor die Laufschrift startet.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_gap']              = array('Lücke','Lücke zwischen den Laufschriften (in px).');
 $GLOBALS['TL_LANG']['tl_module']['marquee_pauseOnHover']     = array('Pause on hover','Die Laufschrift hält bim hovern an.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_duplicated']       = array('Zweifach','Die Laufschrifttexte werden dupliziert, für einen besseren Fluss.');
+$GLOBALS['TL_LANG']['tl_module']['marquee_duration_is_speed']= array('Geschwindigkeit-Priorität','Die Dauer wird zur Geschwindigkeit, wenn dieser Haken gesetzt wird (selbe Geschwindigkeit bei unterschiedlichen Bildschirmgrößen).');
 
 /**
  * Legends

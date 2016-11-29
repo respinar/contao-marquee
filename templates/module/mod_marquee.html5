@@ -1,4 +1,5 @@
 
+<?php if (!empty($this->texts)): ?>
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
   
   <div class="marquee-container">
@@ -9,9 +10,6 @@
    
     <div class="marquee">        
         <div class="marquee-items">
-            <?php if (empty($this->texts)): ?>
-                <span class="marquee-item empty"><?= $this->empty; ?></span>
-            <?php else: ?>
                 <?php foreach ($this->texts as $text): ?>
                   <span class="marquee-item">
                     <?php if (!empty($text['url'])): ?>
@@ -28,7 +26,6 @@
 
                   </span>
                 <?php endforeach ?>                
-            <?php endif; ?>
         </div>
     </div>   
     
@@ -38,6 +35,9 @@
         $('.marquee').marquee({
             <?php if(isset($this->duration)): ?>
                 duration: <?= $this->duration ?>,
+            <?php endif; ?>
+            <?php if(isset($this->durationIsSpeed)): ?>
+            durationIsSpeed: <?= $this->durationIsSpeed ?>,
             <?php endif; ?>
             <?php if(isset($this->gap)): ?>
                 gap: <?= $this->gap ?>,
@@ -58,3 +58,4 @@
     </script>
   
 </div>
+<?php endif; ?>
