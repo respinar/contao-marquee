@@ -10,31 +10,31 @@
 
 
 /**
- * Add palettes to tl_module
+ * Add palettes to tl_content
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['marquee']    = '{title_legend},name,headline,type;{marquee_legend},marquee,numberOfItems;{config_legend},marquee_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['marquee']    = '{title_legend},name,headline,type;{marquee_legend},marquee,numberOfItems;{config_legend},marquee_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
-$GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'marquee_duplicated';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'marquee_duplicated';
 
-$GLOBALS['TL_DCA']['tl_module']['subpalettes']['marquee_duplicated'] = 'marquee_gap';
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['marquee_duplicated'] = 'marquee_gap';
 
 
 
 
 /**
- * Add fields to tl_module
+ * Add fields to tl_content
  */
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee'],
 	'exclude'                 => true,
 	'inputType'               => 'radio',
-	'options_callback'        => array('tl_module_marquee', 'getMarquees'),
+	'options_callback'        => array('tl_content_marquee', 'getMarquees'),
 	'eval'                    => array('multiple'=>false, 'mandatory'=>true),
 	'sql'                     => "int(10) unsigned NOT NULL"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_speed'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_speed'] = array
 (
 	'label'                => &$GLOBALS['TL_LANG']['tl_module']['marquee_speed'],
 	'exclude'              => true,
@@ -43,7 +43,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_speed'] = array
     'sql'                  => "int(10) NOT NULL default '200'"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_delayBeforeStart'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_delayBeforeStart'] = array
 (
 	'label'                => &$GLOBALS['TL_LANG']['tl_module']['marquee_delayBeforeStart'],
 	'exclude'              => true,
@@ -52,7 +52,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_delayBeforeStart'] = array
     'sql'                  => "int(10) NOT NULL default '0'"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_gap'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_gap'] = array
 (
 	'label'                => &$GLOBALS['TL_LANG']['tl_module']['marquee_gap'],
 	'exclude'              => true,
@@ -61,9 +61,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_gap'] = array
     'sql'                  => "int(10) NOT NULL default '0'"
 );
 
-
-
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_pauseOnHover'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_pauseOnHover'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_pauseOnHover'],
 	'exclude'                 => true,
@@ -72,7 +70,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_pauseOnHover'] = array
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_duplicated'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_duplicated'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_duplicated'],
 	'exclude'                 => true,
@@ -81,7 +79,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_duplicated'] = array
 	'sql'                     => "char(1) NOT NULL default ''"
 );
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_direction'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_direction'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_direction'],
 	'default'                 => 'right',
@@ -97,7 +95,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['marquee_direction'] = array
 /**
  * Provide miscellaneous methods that are used by the data configuration array.
  */
-class tl_module_marquee extends Backend
+class tl_content_marquee extends Backend
 {
 
 	/**

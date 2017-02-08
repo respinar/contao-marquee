@@ -28,3 +28,8 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
  * Front end modules
  */
 $GLOBALS['FE_MOD']['miscellaneous']['marquee']   = 'ModuleMarquee';
+
+/**
+ * Content elements
+ */
+$GLOBALS['TL_CTE']['miscellaneous']['marquee'] = 'ModuleMarquee';
