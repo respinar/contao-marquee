@@ -1,4 +1,5 @@
 
+<?php if (!empty($this->texts)): ?>
 <div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
   
   <div class="marquee-container">
@@ -9,13 +10,22 @@
    
     <div class="marquee">        
         <div class="marquee-items">
-            <?php if (empty($this->texts)): ?>
-                <span class="empty"><?= $this->empty; ?></span>
-            <?php else: ?>
                 <?php foreach ($this->texts as $text): ?>
-                  <span><?= $text ?></span>
+                  <span class="marquee-item">
+                    <?php if (!empty($text['url'])): ?>
+                        <a href="<?=$text['url'] ?>"
+                            <?php if (!empty($text['target'])): ?>
+                                target="_blank"
+                            <?php endif; ?>
+                        >
+                    <?php endif; ?>
+                    <?= $text['text'] ?>
+                    <?php if (!empty($text['url'])): ?>
+                        </a>
+                    <?php endif; ?>
+
+                  </span>
                 <?php endforeach ?>                
-            <?php endif; ?>
         </div>
     </div>   
     
@@ -23,13 +33,29 @@
   
     <script>
         $('.marquee').marquee({
-            duration: <?= $this->duration ?>,
-            gap: <?= $this->gap ?>,
-            delayBeforeStart: <?= $this->delayBeforeStart ?>,
-            direction: '<?= $this->direction ?>',
-            duplicated: <?= $this->duplicated ?>,
-            pauseOnHover: <?= $this->pauseOnHover ?>
+            <?php if(isset($this->duration)): ?>
+                duration: <?= $this->duration ?>,
+            <?php endif; ?>
+            <?php if(isset($this->durationIsSpeed)): ?>
+            durationIsSpeed: <?= $this->durationIsSpeed ?>,
+            <?php endif; ?>
+            <?php if(isset($this->gap)): ?>
+                gap: <?= $this->gap ?>,
+            <?php endif; ?>
+            <?php if(isset($this->delayBeforeStart)): ?>
+                delayBeforeStart: <?= $this->delayBeforeStart ?>,
+            <?php endif; ?>
+            <?php if(isset($this->direction) && !empty($this->direction)): ?>
+                direction: '<?= $this->direction ?>',
+            <?php endif; ?>
+            <?php if(isset($this->duplicated)): ?>
+                duplicated: <?= $this->duplicated ?>,
+            <?php endif; ?>
+            <?php if(isset($this->pauseOnHover)): ?>
+                pauseOnHover: <?= $this->pauseOnHover ?>
+            <?php endif; ?>
         });
     </script>
   
 </div>
+<?php endif; ?>

@@ -21,6 +21,7 @@ $GLOBALS['TL_LANG']['tl_module']['marquee_delayBeforeStart'] = array('Delay befo
 $GLOBALS['TL_LANG']['tl_module']['marquee_gap']              = array('Gap','Gap in pixels between the marquees.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_pauseOnHover']     = array('Pause on hover','On hover pause the marquee.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_duplicated']       = array('Duplicated','The marquee be duplicated to show an effect of continues flow.');
+$GLOBALS['TL_LANG']['tl_module']['marquee_duration_is_speed']= array('Speed-Priority','If this is checked, the duration field is considered to be the speed (so the marquee speed is responsiv).');
 
 /**
  * Legends
