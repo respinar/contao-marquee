@@ -12,7 +12,7 @@
 /**
  * Add palettes to tl_content
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['marquee']    = '{title_legend},name,headline,type;{marquee_legend},marquee,numberOfItems;{config_legend},marquee_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['marquee']    = '{title_legend},name,headline,type;{marquee_legend},marquee,numberOfItems;{config_legend},marquee_duration,marquee_duration_is_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'marquee_duplicated';
 
@@ -29,18 +29,27 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['marquee'] = array
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee'],
 	'exclude'                 => true,
 	'inputType'               => 'radio',
-	'options_callback'        => array('tl_content_marquee', 'getMarquees'),
+	'foreignKey'              => 'tl_marquee.title',
 	'eval'                    => array('multiple'=>false, 'mandatory'=>true),
 	'sql'                     => "int(10) unsigned NOT NULL"
 );
 
-$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_speed'] = array
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_duration'] = array
 (
-	'label'                => &$GLOBALS['TL_LANG']['tl_module']['marquee_speed'],
+	'label'                => &$GLOBALS['TL_LANG']['tl_content']['marquee_duration'],
 	'exclude'              => true,
 	'inputType'            => 'text',
 	'eval'                 => array('tl_class'=>'w50'),
     'sql'                  => "int(10) NOT NULL default '200'"
+);
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['marquee_duration_is_speed'] = array
+(
+    'label'                   => &$GLOBALS['TL_LANG']['tl_content']['marquee_duration_is_speed'],
+    'exclude'                 => true,
+    'inputType'               => 'checkbox',
+    'eval'                    => array('tl_class'=>'w50 m12'),
+    'sql'                     => "char(1) NOT NULL default ''"
 );
 
 $GLOBALS['TL_DCA']['tl_content']['fields']['marquee_delayBeforeStart'] = array
@@ -90,47 +99,3 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['marquee_direction'] = array
 	'eval'                    => array('tl_class'=>'w50'),
 	'sql'                     => "varchar(16) NOT NULL default ''"
 );
-
-
-/**
- * Provide miscellaneous methods that are used by the data configuration array.
- */
-class tl_content_marquee extends Backend
-{
-
-	/**
-	 * Import the back end user object
-	 */
-	public function __construct()
-	{
-		parent::__construct();
-		$this->import('BackendUser', 'User');
-	}
-
-
-	/**
-	 * Get all news archives and return them as array
-	 *
-	 * @return array
-	 */
-	public function getMarquees()
-	{
-		//if (!$this->User->isAdmin && !is_array($this->User->news))
-		//{
-		//	return array();
-		//}
-
-		$arrMarquees = array();
-		$objMarquees = $this->Database->execute("SELECT id, title FROM tl_marquee ORDER BY title");
-
-		while ($objMarquees->next())
-		{
-			//if ($this->User->hasAccess($objMarquees->id, 'marquee'))
-			//{
-				$arrMarquees[$objMarquees->id] = $objMarquees->title;
-			//}
-		}
-
-		return $arrMarquees;
-	}
-}
