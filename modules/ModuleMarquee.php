@@ -15,7 +15,7 @@
 /**
  * Namespace
  */
-namespace marquee;
+namespace Respinar\Marquee;
 
 
 /**

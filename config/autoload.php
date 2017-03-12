@@ -14,7 +14,7 @@
  */
 ClassLoader::addNamespaces(array
 (
-	'marquee',
+	'Respinar\Marquee',
 ));
 
 
@@ -24,14 +24,14 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Modules
-	'marquee\ModuleMarquee'    => 'system/modules/marquee/modules/ModuleMarquee.php',
+	'Respinar\Marquee\ModuleMarquee'    => 'system/modules/marquee/modules/ModuleMarquee.php',
 
     // Content Elements
-	'marquee\ContentMarquee'    => 'system/modules/marquee/elements/ContentMarquee.php',
+	'Respinar\Marquee\ContentMarquee'    => 'system/modules/marquee/elements/ContentMarquee.php',
 
 	// Models
-	'marquee\MarqueeModel'     => 'system/modules/marquee/models/MarqueeModel.php',
-	'marquee\MarqueeTextModel' => 'system/modules/marquee/models/MarqueeTextModel.php',
+	'Respinar\Marquee\MarqueeModel'     => 'system/modules/marquee/models/MarqueeModel.php',
+	'Respinar\Marquee\MarqueeTextModel' => 'system/modules/marquee/models/MarqueeTextModel.php',
 ));
 
 
