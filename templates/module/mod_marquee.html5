@@ -1,11 +1,11 @@
+<?php $this->extend('block_searchable'); ?>
 
-<?php if (!empty($this->texts)): ?>
-<div class="<?= $this->class ?> block"<?= $this->cssID ?><?php if ($this->style): ?> style="<?= $this->style ?>"<?php endif; ?>>
-  
+<?php $this->block('content'); ?>
+
   <div class="marquee-container">
   
-    <?php if ($this->headline): ?>
-      <div class="marquee-sibling"><<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>></div>
+    <?php if ($this->marquee_title): ?>
+      <div class="marquee-sibling"><?= $this->marquee_title ?></div>
     <?php endif; ?>
    
     <div class="marquee">        
@@ -57,5 +57,4 @@
         });
     </script>
   
-</div>
-<?php endif; ?>
+<?php $this->endblock(); ?>
