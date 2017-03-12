@@ -15,6 +15,8 @@
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_module']['marquee']                  = array('Marquee', 'Please select one marquee.');
+$GLOBALS['TL_LANG']['tl_module']['marquee_duration']         = array('Marquee duration','');
+$GLOBALS['TL_LANG']['tl_module']['marquee_title']            = array('Title','Title of the marquee.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_speed']            = array('Speed','Speed in milliseconds per character of the marquee.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_direction']        = array('Direction','Direction of marquee.');
 $GLOBALS['TL_LANG']['tl_module']['marquee_delayBeforeStart'] = array('Delay before start','Time in milliseconds before the marquee will start animating.');

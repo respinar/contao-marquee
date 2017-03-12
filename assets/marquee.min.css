@@ -1,2 +1,1 @@
-/* Marquee, (c) 2015 Hamid Abbaszadeh, LGPL-3+ license */
-.mod_marquee{direction:ltr;}.marquee-container{width:100%;cursor:pointer;}.marquee{overflow:hidden;}
+.ce_marquee,.mod_marquee{direction:ltr}.ce_marquee .marquee-container,.mod_marquee .marquee-container{width:100%;cursor:pointer}.ce_marquee .marquee,.mod_marquee .marquee{overflow:hidden}

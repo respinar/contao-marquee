@@ -26,6 +26,9 @@ ClassLoader::addClasses(array
 	// Modules
 	'marquee\ModuleMarquee'    => 'system/modules/marquee/modules/ModuleMarquee.php',
 
+    // Content Elements
+	'marquee\ContentMarquee'    => 'system/modules/marquee/elements/ContentMarquee.php',
+
 	// Models
 	'marquee\MarqueeModel'     => 'system/modules/marquee/models/MarqueeModel.php',
 	'marquee\MarqueeTextModel' => 'system/modules/marquee/models/MarqueeTextModel.php',
@@ -38,4 +41,5 @@ ClassLoader::addClasses(array
 TemplateLoader::addFiles(array
 (
 	'mod_marquee' => 'system/modules/marquee/templates/module',
+	'ce_marquee'  => 'system/modules/marquee/templates/content',
 ));

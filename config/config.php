@@ -10,7 +10,7 @@
  * @license   LGPL-3.0+
  * @copyright respinar 2015
  */
- 
+
  /**
  * Back end modules
  */
@@ -32,4 +32,4 @@ $GLOBALS['FE_MOD']['miscellaneous']['marquee']   = 'ModuleMarquee';
 /**
  * Content elements
  */
-$GLOBALS['TL_CTE']['miscellaneous']['marquee'] = 'ModuleMarquee';
+$GLOBALS['TL_CTE']['miscellaneous']['marquee']   = 'ContentMarquee';
