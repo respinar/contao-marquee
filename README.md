@@ -1,0 +1,2 @@
+Marquee Extension for Contao
+===
