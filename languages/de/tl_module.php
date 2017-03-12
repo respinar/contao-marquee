@@ -3,12 +3,12 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2015 Leo Feyer
+ * Copyright (c) 2005-2017 Leo Feyer
  *
  * @package   Marquee
  * @author    Hamid Abbaszadeh info@respinar.com
  * @license   LGPL-3.0+
- * @copyright respinar 2015
+ * @copyright respinar 2015-2017
  */
 
  /**
