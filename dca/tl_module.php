@@ -13,7 +13,7 @@
  * Add palettes to tl_module
  */
 
-$GLOBALS['TL_DCA']['tl_module']['palettes']['marquee']    = '{title_legend},name,headline,type;{marqee_legend},marquee,numberOfItems;{config_legend},marquee_duration,marquee_duration_is_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['marquee']    = '{title_legend},name,headline,type;{marqee_legend},marquee_title,marquee,numberOfItems;{config_legend},marquee_duration,marquee_duration_is_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_module']['palettes']['__selector__'][] = 'marquee_duplicated';
 
@@ -25,6 +25,15 @@ $GLOBALS['TL_DCA']['tl_module']['subpalettes']['marquee_duplicated'] = 'marquee_
 /**
  * Add fields to tl_module
  */
+$GLOBALS['TL_DCA']['tl_module']['fields']['marquee_title'] = array
+(
+	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_title'],
+	'exclude'                 => true,
+	'inputType'               => 'text',	
+	'eval'                    => array('tl_class'=>"w50"),
+	'sql'                     => "varchar(255) NOT NULL default ''"
+);
+
 $GLOBALS['TL_DCA']['tl_module']['fields']['marquee'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee'],
