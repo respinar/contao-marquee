@@ -24,14 +24,14 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Modules
-	'Respinar\Marquee\ModuleMarquee'    => 'system/modules/marquee/modules/ModuleMarquee.php',
+	'Respinar\Marquee\ModuleMarquee'    => 'system/modules/marquee/library/Respinar/Marquee/Frontend/Modules/ModuleMarquee.php',
 
     // Content Elements
-	'Respinar\Marquee\ContentMarquee'    => 'system/modules/marquee/elements/ContentMarquee.php',
+	'Respinar\Marquee\ContentMarquee'    => 'system/modules/marquee/library/Respinar/Marquee/Frontend/Elements/ContentMarquee.php',
 
 	// Models
-	'Respinar\Marquee\MarqueeModel'     => 'system/modules/marquee/models/MarqueeModel.php',
-	'Respinar\Marquee\MarqueeTextModel' => 'system/modules/marquee/models/MarqueeTextModel.php',
+	'Respinar\Marquee\MarqueeModel'     => 'system/modules/marquee/library/Respinar/Marquee/Models/MarqueeModel.php',
+	'Respinar\Marquee\MarqueeTextModel' => 'system/modules/marquee/library/Respinar/Marquee/Models/MarqueeTextModel.php',
 ));
 
 
