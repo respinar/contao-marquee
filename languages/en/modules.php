@@ -22,3 +22,9 @@ $GLOBALS['TL_LANG']['MOD']['marquee'] = array('Marquee', 'Manage text items of M
  * Front end modules
  */
 $GLOBALS['TL_LANG']['FMD']['marquee'] = array('Marquee', 'Add marquee to the page');
+
+
+/**
+ * Front end content elements
+ */
+$GLOBALS['TL_LANG']['CTE']['marquee'] = array('Marquee', 'Add marquee to the page');
