@@ -12,7 +12,7 @@
 /**
  * Add palettes to tl_content
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['marquee']    = '{title_legend},name,headline,type;{marquee_legend},marquee,numberOfItems;{config_legend},marquee_title,marquee_duration,marquee_duration_is_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['marquee']    = '{title_legend},type,headline;{marquee_legend},marquee,numberOfItems;{config_legend},marquee_title,marquee_duration,marquee_duration_is_speed,marquee_direction,marquee_pauseOnHover,marquee_delayBeforeStart,marquee_duplicated;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'marquee_duplicated';
 
@@ -28,7 +28,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['marquee_title'] = array
 (
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['marquee_title'],
 	'exclude'                 => true,
-	'inputType'               => 'text',	
+	'inputType'               => 'text',
 	'eval'                    => array('tl_class'=>"w50"),
 	'sql'                     => "varchar(255) NOT NULL default ''"
 );
