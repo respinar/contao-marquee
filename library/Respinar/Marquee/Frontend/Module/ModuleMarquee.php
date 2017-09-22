@@ -15,8 +15,10 @@
 /**
  * Namespace
  */
-namespace Respinar\Marquee;
+namespace Respinar\Marquee\Frontend\Module;
 
+use Respinar\Marquee\Model\MarqueeModel;
+use Respinar\Marquee\Model\MarqueeTextModel;
 
 /**
  * Class ModuleMarquee
@@ -25,14 +27,14 @@ namespace Respinar\Marquee;
  * @author     Hamid Abbaszadeh info@respinar.com
  * @package    Devtools
  */
-class ContentMarquee extends \ContentElement
+class ModuleMarquee extends \Module
 {
 
 	/**
 	 * Template
 	 * @var string
 	 */
-	protected $strTemplate = 'ce_marquee';
+	protected $strTemplate = 'mod_marquee';
     
     
     /**
@@ -46,13 +48,10 @@ class ContentMarquee extends \ContentElement
 			$objTemplate = new \BackendTemplate('be_wildcard');
 
 			$objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['marquee'][0]) . ' ###';
-
-			$objMarquee = \MarqueeModel::findBy('id',$this->marquee);
-
 			$objTemplate->title = $this->headline;
-			$objTemplate->id = $this->marquee;
-			$objTemplate->link = $objMarquee->title;
-			$objTemplate->href = 'contao/main.php?do=marquee&amp;table=tl_marquee_text&amp;id=' . $this->marquee;
+			$objTemplate->id = $this->id;
+			$objTemplate->link = $this->name;
+			$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
 
 			return $objTemplate->parse();
 		}
@@ -94,7 +93,7 @@ class ContentMarquee extends \ContentElement
         if(isset($this->numberOfItem) && $this->numberOfItem>0)
             $optns["limit"]=$this->numberOfItem;
         
-        $objMarqueeTexts = \MarqueeTextModel::findPublishedByPid($this->marquee,$optns);
+        $objMarqueeTexts = MarqueeTextModel::findPublishedByPid($this->marquee,$optns);
         
         $arrMarqueeTexts = array();
 
