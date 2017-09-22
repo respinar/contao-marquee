@@ -23,13 +23,18 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
 	)
 ));
 
+/**
+ * Register models
+ */
+ $GLOBALS['TL_MODELS']['tl_marquee']      = 'Respinar\Marquee\Model\MarqueeModel';
+ $GLOBALS['TL_MODELS']['tl_marquee_text'] = 'Respinar\Marquee\Model\MarqueeTextModel'; 
 
 /**
  * Front end modules
  */
-$GLOBALS['FE_MOD']['miscellaneous']['marquee']   = 'ModuleMarquee';
+$GLOBALS['FE_MOD']['miscellaneous']['marquee']   = 'Respinar\Marquee\Frontend\Module\ModuleMarquee';
 
 /**
  * Content elements
  */
-$GLOBALS['TL_CTE']['miscellaneous']['marquee']   = 'ContentMarquee';
+$GLOBALS['TL_CTE']['miscellaneous']['marquee']   = 'Respinar\Marquee\Frontend\Element\ContentMarquee';
