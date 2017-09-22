@@ -8,32 +8,12 @@
  * @license LGPL-3.0+
  */
 
-
-/**
- * Register the namespaces
+ /**
+ * Register PSR-0 namespaces
  */
-ClassLoader::addNamespaces(array
-(
-	'Respinar\Marquee',
-));
-
-
-/**
- * Register the classes
- */
-ClassLoader::addClasses(array
-(
-	// Modules
-	'Respinar\Marquee\ModuleMarquee'    => 'system/modules/marquee/library/Respinar/Marquee/Frontend/Modules/ModuleMarquee.php',
-
-    // Content Elements
-	'Respinar\Marquee\ContentMarquee'    => 'system/modules/marquee/library/Respinar/Marquee/Frontend/Elements/ContentMarquee.php',
-
-	// Models
-	'Respinar\Marquee\MarqueeModel'     => 'system/modules/marquee/library/Respinar/Marquee/Models/MarqueeModel.php',
-	'Respinar\Marquee\MarqueeTextModel' => 'system/modules/marquee/library/Respinar/Marquee/Models/MarqueeTextModel.php',
-));
-
+ if (class_exists('NamespaceClassLoader')) {
+    NamespaceClassLoader::add('Respinar\Marquee', 'system/modules/marquee/library');
+}
 
 /**
  * Register the templates
