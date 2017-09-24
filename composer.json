@@ -23,13 +23,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\Marquee\\": "library/"
+            "Respinar\\Marquee\\": "src/library/"
         }
     },
     "extra": {
         "contao": {
             "sources": {
-                "": "system/modules/marquee"
+                "src": "system/modules/marquee"
             },
             "transifex": {
                 "project": "contao-marquee",
