@@ -8,12 +8,6 @@
  * @license LGPL-3.0+
  */
 
-/**
- * Register PSR-0 namespaces
- */
- if (class_exists('NamespaceClassLoader')) {
-    NamespaceClassLoader::add('Respinar\Marquee', 'system/modules/marquee/library');
-}
 
 /**
  * Register the templates
