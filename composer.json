@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\MarqueeBundle\\": "src/"
+            "Respinar\\ContaoMarquee\\": "src/"
         }
     },
     "config": {
@@ -26,6 +26,6 @@
         }
     },
     "extra": {
-        "contao-manager-plugin": "Respinar\\MarqueeBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Respinar\\ContaoMarquee\\ContaoManager\\Plugin"
     }
 }
