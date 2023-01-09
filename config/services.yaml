@@ -9,6 +9,6 @@ services:
         bind:
             #$projectDir: '%kernel.project_dir%'
 
-    Respinar\MarqueeBundle\:
+    Respinar\ContaoMarquee\:
         resource: ../src/
         exclude: ../src/{DependencyInjection,Model,Session}
