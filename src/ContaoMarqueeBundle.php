@@ -15,7 +15,7 @@ namespace Respinar\MarqueeBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class RespinarMarqueeBundle extends Bundle
+class ContaoMarqueeBundle extends Bundle
 {
     public function getPath(): string
     {
