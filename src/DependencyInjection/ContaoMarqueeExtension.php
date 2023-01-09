@@ -10,14 +10,14 @@ declare(strict_types=1);
  * @license MIT
  */
 
-namespace Respinar\MarqueeBundle\DependencyInjection;
+namespace Respinar\ContaoMarquee\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
-class RespinarMarqueeExtension extends Extension
+class ContaoMarqueeExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
