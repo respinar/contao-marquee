@@ -11,6 +11,7 @@
  * @copyright respinar 2015-2017
  */
 
+use Contao\DC_Table;
 
 /**
  * Table tl_marquee_text
@@ -21,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_marquee_text'] = array
 	// Config
 	'config' => array
 	(
-		'dataContainer'               => 'Table',
+		'dataContainer'               => DC_Table::class,
         'ptable'                      => 'tl_marquee',
 		'enableVersioning'            => true,
 		'sql' => array
@@ -202,7 +203,7 @@ $GLOBALS['TL_DCA']['tl_marquee_text'] = array
  */
 class tl_marquee_text extends Backend
 {
-    
+
     /**
 	 * Import the back end user object
 	 */
@@ -211,7 +212,7 @@ class tl_marquee_text extends Backend
 		parent::__construct();
 		$this->import('BackendUser', 'User');
 	}
-    
+
     /**
 	 * Add the type of input field
 	 *
@@ -223,7 +224,7 @@ class tl_marquee_text extends Backend
 	{
 		return '<div>' . $arrRow['text'] . '</div>';
 	}
-    
+
     /**
 	 * Return the link picker wizard
 	 *
@@ -235,7 +236,7 @@ class tl_marquee_text extends Backend
 	{
 		return ' <a href="' . (($dc->value == '' || strpos($dc->value, '{{link_url::') !== false) ? 'contao/page.php' : 'contao/file.php') . '?do=' . Input::get('do') . '&amp;table=' . $dc->table . '&amp;field=' . $dc->field . '&amp;value=' . rawurlencode(str_replace(array('{{link_url::', '}}'), '', $dc->value)) . '&amp;switch=1' . '" title="' . specialchars($GLOBALS['TL_LANG']['MSC']['pagepicker']) . '" onclick="Backend.getScrollOffset();Backend.openModalSelector({\'width\':768,\'title\':\'' . specialchars(str_replace("'", "\\'", $GLOBALS['TL_LANG']['MOD']['page'][0])) . '\',\'url\':this.href,\'id\':\'' . $dc->field . '\',\'tag\':\'ctrl_'. $dc->field . ((Input::get('act') == 'editAll') ? '_' . $dc->id : '') . '\',\'self\':this});return false">' . Image::getHtml('pickpage.gif', $GLOBALS['TL_LANG']['MSC']['pagepicker'], 'style="vertical-align:top;cursor:pointer"') . '</a>';
 	}
-    
+
     /**
 	 * Return the "toggle visibility" button
 	 *
@@ -327,5 +328,5 @@ class tl_marquee_text extends Backend
 		$objVersions->create();
 		$this->log('A new version of record "tl_marquee_text.id='.$intId.'" has been created'.$this->getParentEntries('tl_marquee_text', $intId), __METHOD__, TL_GENERAL);
 	}
-}    
+}
 
