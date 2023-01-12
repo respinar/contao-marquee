@@ -11,6 +11,7 @@
  * @copyright respinar 2015-2017
  */
 
+use Contao\DC_Table;
 
 /**
  * Table tl_marquee
@@ -21,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_marquee'] = array
 	// Config
 	'config' => array
 	(
-		'dataContainer'               => 'Table',
+		'dataContainer'               => DC_Table::class,
         'ctable'                      => array('tl_marquee_text'),
 		'enableVersioning'            => true,
 		'sql' => array
