@@ -1,14 +1,11 @@
 <?php
 
-/**
- * Contao Open Source CMS
+/*
+ * This file is part of Contao Marquee Bundle.
  *
- * Copyright (c) 2005-2017 Leo Feyer
+ * (c) Hamid Peywasti 2015-2024 <hamid@respinar.com>
  *
- * @package   Marquee
- * @author    Hamid Abbaszadeh info@respinar.com
- * @license   GNU/LGPL
- * @copyright respinar 2015-2017
+ * @license LGPL-3.0-or-later
  */
 
 use Contao\DC_Table;
