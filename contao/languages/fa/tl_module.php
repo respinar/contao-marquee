@@ -1,14 +1,11 @@
 <?php
-/**
- * Translations are managed using Transifex. To create a new translation
- * or to help to maintain an existing one, please register at transifex.com.
+
+/*
+ * This file is part of Contao Marquee Bundle.
  *
- * @link http://help.transifex.com/intro/translating.html
- * @link https://www.transifex.com/projects/p/contao-marquee/language/fa/
+ * (c) Hamid Peywasti 2015-2024 <hamid@respinar.com>
  *
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
- *
- * last-updated: 2015-12-23T13:15:11+00:00
+ * @license LGPL-3.0-or-later
  */
 
 
